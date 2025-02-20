@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFC Seguridad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a2e;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #0a2a52;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 40px; 
+            margin-right: 10px; 
+        }
+
+        .company-name {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            position: relative;
+        }
+
+        .menu-button {
+            background-color: #e94560;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-right: 10px;
+            position: relative;
+            z-index: 1100;
+        }
+        .menu-button:hover {
+            background-color: #ff2e63;
+        }
+
+        .menu {
+            position: absolute;
+            top: 45px;
+            right: 10px;
+            background: #0f3460;
+            display: none;
+            flex-direction: column;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        .menu a:hover {
+            background-color: #e94560;
+        }
+
+        .section {
+            display: none;
+            margin: 50px auto;
+            width: 80%;
+            max-width: 1000px;
+            text-align: justify;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .services {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .service {
+            background-color: #0f3460;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #e94560;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #ff2e63;
+        }
+
+        footer {
+            background-color: #0f3460;
+            color: white;
+            padding: 20px;
+            margin-top: auto;
+        }
+
+        .section-active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 75vh;
+            text-align: center;
+            padding: 1px;
+            margin: 0 auto;
+        }
+
+        .layla, .drexan, .allison, .andres {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .layla {
+            background-color: #f0f0f0;
+        }
+
+        .drexan {
+            background-color: #e8e8e8;
+        }
+
+        .allison {
+            background-color: #e0e0e0;
+        }
+
+        .andres {
+            background-color: #d8d8d8;
+        }
+
+        .reloj {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 50vh;
+            text-align: center;
+            line-height: 1.6;
+            text-align: justify;
+            
+        }
+
+        .one {
+
+
+           padding:  1vh;
+           font-size: 40px;
+           font-weight: bold;
+           text-align: center;
+
+        }
+    </style>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('.section, .section-active');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</head>
+
+<body onload="showSection('inicio')">
+    <header class="header">
+        <div class="logo-container">
+            <img src="LOGO.png" alt="SFC Seguridad" class="logo">
+            <span class="company-name">SFC Seguridad</span>
+        </div>
+    
+        <nav style="margin-right: 20px;">
+            <button class="menu-button" onclick="toggleMenu()">☰ Menú</button>
+            <div class="menu" id="menu">
+                <a href="#" onclick="showSection('inicio'); toggleMenu();">Inicio</a>
+                <a href="#" onclick="showSection('servicios'); toggleMenu();">Servicios</a>
+                <a href="#" onclick="showSection('contacto'); toggleMenu();">Contacto</a>
+            </div>
+        </nav>
+    </header>
+asd
+
+
+<div class="section active" id="inicio">
+ <h3 class="one">SFC SEGURIDAD</h3>
+    <p class=" reloj">
+        Seguridad SFC es una empresa líder en el sector de la seguridad privada, que desde el 17 de febrero del 2017 se ha dedicado a brindar soluciones integrales de protección a lo largo y ancho del país. Nuestra misión es garantizar la tranquilidad y el bienestar de nuestros clientes, ofreciendo servicios de vanguardia que se adaptan a las necesidades cambiantes del entorno actual. Desde nuestros inicios, hemos trabajado incansablemente para consolidarnos como un referente en seguridad, combinando tecnología de punta y personal altamente capacitado. Contamos con una amplia gama de servicios que incluyen la instalación y monitoreo de cámaras de vigilancia de última generación, diseñadas para proporcionar imágenes claras y precisas en tiempo real, permitiendo a nuestros clientes tener el control y la supervisión de sus propiedades en cualquier momento y desde cualquier lugar. Además, ofrecemos sistemas de cercas eléctricas que actúan como una primera línea de defensa disuasiva, así como alarmas de alta sensibilidad que detectan cualquier intento de intrusión, enviando alertas inmediatas para una respuesta rápida y eficaz. Nuestro equipo de seguridad física está compuesto por profesionales rigurosamente seleccionados y capacitados, quienes velan por la protección de personas, bienes y activos críticos, proporcionando un entorno seguro y confiable. En Seguridad SFC entendemos que cada cliente es único, por lo que diseñamos soluciones personalizadas que se ajustan a los requerimientos específicos de cada situación, ofreciendo así un servicio integral que cubre desde la prevención hasta la respuesta ante emergencias. Nuestro compromiso con la excelencia y la mejora continua nos ha permitido ganar la confianza de una amplia cartera de clientes que incluyen empresas, instituciones públicas y hogares, quienes saben que pueden contar con nosotros para proteger lo que más valoran. Desde hace más de seis años, Seguridad SFC ha marcado la diferencia en el sector, destacándose por su profesionalismo, confiabilidad y un enfoque proactivo en la gestión de riesgos. Nos enorgullece ser una empresa 100% comprometida con la seguridad de nuestro país, contribuyendo día a día a construir comunidades más seguras y protegidas.
+    </p>
+
+
+</div>
+    <div class="section active" id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="services">
+            <div class="service">
+                <h3>Instalación de Cámaras</h3>
+                <p>Servicio profesional de instalación de cámaras de seguridad.</p>
+                <a href="sfc-camaras.html" class="btn">Más Información</a>
+            </div>
+            <div class="service">
+                <h3>Alarmas</h3>
+                <p>Sistemas de alarmas modernas para tu seguridad.</p>
+                <a href="sfc-alarmas.html" class="btn">Más Información</a>
+            </div>
+            <div class="service">
+                <h3>Cercas Eléctricas</h3>
+                <p>Protege tu propiedad con nuestras cercas eléctricas.</p>
+                <a href="sfc-cercas electricas.html" class="btn">Más Información</a>
+            </div>
+            <div class="service">
+                <h3>Seguridad Física</h3>
+                <p>Protección personalizada con nuestro equipo altamente capacitado.</p>
+                <a href="sfc-seguridad-fisica.html" class="btn">Más Información</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="contacto">
+        <h2>Contacto</h2>
+        <form action="mailto:asagseguridadcr@gmail.com" method="post" enctype="text/plain">
+            <input type="text" class="layla" placeholder="Nombre y Apellido" required>
+            <input type="tel" class="drexan" placeholder="Teléfono" required>
+            <input type="email" class="allison" placeholder="Correo Electrónico" required>
+            <textarea class="andres" placeholder="Nota (opcional)"></textarea>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2025 SFC Seguridad. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
